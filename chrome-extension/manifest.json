@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "YouTube Live Chat Tracker",
+  "version": "1.0",
+  "description": "Tracks YouTube live chat API requests",
+  "permissions": [
+    "activeTab",
+    "debugger",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Open Chat Tracker"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

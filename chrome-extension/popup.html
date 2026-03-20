@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Tracker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <header class="header">
+      <h1 class="title">
+        <span class="title-icon">◉</span>
+        Chat Tracker
+      </h1>
+      <div class="stats">
+        <span class="stat total">
+          <span class="stat-value" id="totalCount">0</span>
+          <span class="stat-label">total</span>
+        </span>
+        <span class="stat deleted">
+          <span class="stat-value" id="deletedCount">0</span>
+          <span class="stat-label">deleted</span>
+        </span>
+      </div>
+    </header>
+
+    <div class="controls">
+      <div class="search-wrapper">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search messages...">
+        <button id="clearSearch" class="clear-search" title="Clear search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="tabs">
+        <button class="tab active" data-filter="all">
+          <span class="tab-icon">◈</span>
+          All Chats
+        </button>
+        <button class="tab" data-filter="deleted">
+          <span class="tab-icon">✕</span>
+          Deleted
+        </button>
+      </div>
+    </div>
+
+    <div class="chat-list" id="chatList">
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">◇</div>
+        <p class="empty-text">No chats yet</p>
+        <p class="empty-subtext">Watch a YouTube live stream to start tracking</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <button id="clearLog" class="clear-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+        </svg>
+        Clear Log
+      </button>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
